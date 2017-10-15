@@ -23,35 +23,22 @@ var io = socketIO(server);
 var port = process.env.PORT || 3000;
 
 // Initialize a new socket.io object. It is bound to 
-// the express app, which allows them to coexist.
-
-
-
-// This is a secret key that prevents others from opening your presentation
-// and controlling it. Change it to something that only you know.
-
+// the express app, which allows them to coexist
 
 // Initialize a new socket.io application
 
 io.on('connection', function (socket) {
 
-	// A new client has come online. Check the secret key and 
-	// emit a "granted" or "denied" message.
+	
     console.log('New user connected');
 
 	//socket.on('load', function(data){
 
-		/*socket.emit('access', {
-			access:  "granted" 
-		});
-*/
-	//});
-
+		
 	// Clients send the 'slide-changed' message whenever they navigate to a new slide.
 
 	socket.on('slide-changed', function(data){
 
-		// Check the secret key again
       console.log("hash Change "+data.hash);
        
 		
